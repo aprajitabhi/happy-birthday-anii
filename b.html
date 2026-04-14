@@ -798,20 +798,19 @@
             }
         });
 
-        // Mobile Touch Support
-        let touchStartY = 0;
-        document.addEventListener('touchstart', (e) => {
-            touchStartY = e.touches[0].clientY;
-        });
-
-        document.addEventListener('touchend', (e) => {
-            const touchEndY = e.changedTouches[0].clientY;
-            const diff = touchStartY - touchEndY;
-            
-            if(diff > 150) { // Swipe up (requires strong deliberate swipe)
-                nextPage();
-            }
-        });
+        // Mobile Touch Support - DISABLED (use buttons only)
+        // Pages now change only through button clicks to prevent accidental navigation
+        // let touchStartY = 0;
+        // document.addEventListener('touchstart', (e) => {
+        //     touchStartY = e.touches[0].clientY;
+        // });
+        // document.addEventListener('touchend', (e) => {
+        //     const touchEndY = e.changedTouches[0].clientY;
+        //     const diff = touchStartY - touchEndY;
+        //     if(diff > 150) { // Swipe up (requires strong deliberate swipe)
+        //         nextPage();
+        //     }
+        // });
 
         // PWA-like fullscreen (Bonus)
         let deferredPrompt;
